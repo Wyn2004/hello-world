@@ -25,10 +25,6 @@ jobs:
       run: |
         ssh-keyscan -H 54.234.144.68 >> ~/.ssh/known_hosts
 
-    - name: 🧪 Test SSH connection (debug)
-      run: |
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 echo "✅ SSH connection successful"
-
     - name: Deploy to EC2
       run: |
         ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << 'EOF'
