@@ -26,7 +26,7 @@ jobs:
         ssh-keyscan -H 54.234.144.68 >> ~/.ssh/known_hosts
 
     - name: Deploy to EC2
-        run: |
+      run: |
         ssh -i ~/.ssh/id_rsa ubuntu@54.234.144.68 << 'EOF'
           cd ~/workspace/hello-world
           git pull origin main
