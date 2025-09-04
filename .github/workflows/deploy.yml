@@ -38,8 +38,8 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H 54.234.144.68 >> ~/.ssh/known_hosts
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << 'EOF'
+        head -n 5 ~/.ssh/id_rsa
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << EOF
           cd ~/workspace/hello-world
           git pull origin main
           sudo docker compose up -d --build
