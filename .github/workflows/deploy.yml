@@ -38,7 +38,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -i ~/ ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@13.229.59.101 << EOF
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << EOF
           ls
           pwd
           cd ~/workspace/hello-world
