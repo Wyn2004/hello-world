@@ -38,6 +38,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" | base64 -d > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
+        cat ~/.ssh/id_rsa
         ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << EOF
           ls
           pwd
