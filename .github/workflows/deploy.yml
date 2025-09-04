@@ -27,7 +27,7 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -i ~/.ssh/id_rsa ubuntu@54.234.144.68 << EOF
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@54.234.144.68 << EOF
           cd ~/workspace/hello-world
           git pull origin main
           sudo docker compose up -d --build
